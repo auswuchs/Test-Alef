@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <header>
+  <header class="header">
     <div class="container header-container">
       <RouterLink to="/">
         <figure>
@@ -28,6 +28,10 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
+.header {
+  background-color: var(--c-white);
+}
+
 .header-container {
   display: flex;
   align-items: center;

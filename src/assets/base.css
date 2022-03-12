@@ -2,8 +2,11 @@
 
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
+  --c-light-tone-gray: rgba(241, 241, 241, 1);
   --с-half-tone-gray: rgba(17, 17, 17, 0.48);
   --c-main-dark: rgba(17, 17, 17, 1);
+  --c-white: rgba(255, 255, 255, 1);
+  --c-primary: rgba(1, 167, 253, 1);
 }
 
 *,
@@ -17,8 +20,8 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
+  background: var(--c-white);
+  transition: color 0.3s ease-in-out;
   line-height: 1.6;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -26,3 +29,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+.btn {
+  border: 2px solid var(--c-primary);
+  border-radius: 100px;
+
+  font-size: 1rem;
+  line-height: 1.5rem;
+  
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  
+  color: var(--c-primary);
+  background-color: var(--c-white);
+  transition: 0.3s ease-in-out;
+}
+
+
+
+
