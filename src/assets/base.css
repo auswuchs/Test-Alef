@@ -3,6 +3,7 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --c-light-tone-gray: rgba(241, 241, 241, 1);
+  --с-slate-gray: rgba(17, 17, 17, 0.1);
   --с-half-tone-gray: rgba(17, 17, 17, 0.48);
   --c-main-dark: rgba(17, 17, 17, 1);
   --c-white: rgba(255, 255, 255, 1);

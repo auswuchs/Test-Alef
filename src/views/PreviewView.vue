@@ -12,7 +12,7 @@ const { parent, childs } = main
       <section>
         <p class="legend">Персональные данные</p>
         <p class="legend parent-info" v-if="parent.name">{{ parent.name }}, {{ parent.age }} лет</p>
-        <p class="legend parent-info" v-else>Вы не указали свои данные</p>
+        <p class="legend" v-else>Вы не указали свои данные</p>
       </section>
 
       <section class="child-section" v-if="childs.length">
