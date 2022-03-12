@@ -5,7 +5,7 @@ const props = defineProps({
   index: Number,
 })
 
-const emits = defineEmits(['updateChildName', 'updateChildAge', 'removeChild',])
+const emits = defineEmits(['updateChildName', 'updateChildAge', 'removeChild', 'updateChild'])
 
 const child = reactive({
   name: '',
@@ -16,23 +16,7 @@ const removeChild = () => {
   emits('removeChild', props.index)
 }
 
-watch(
-  () => child.name,
-
-  (newValue) => {
-    emits('updateChildName', newValue, props.index)
-  },
-)
-
-watch(
-  () => child.age,
-
-  (newValue) => {
-    emits('updateChildAge', newValue, props.index)
-  }
-)
-
-
+watch(child, (newValue) => emits('updateChild', newValue, props.index))
 
 </script>
 

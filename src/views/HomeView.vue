@@ -35,10 +35,10 @@ const addChildForm = () => {
 
 const removeChild = (index: number) => newChilds.value.splice(index, 1)
 
-const updateChildName = (name: string, index: number) => newChilds.value[index].name = name
-
-const updateChildAge = (age: string, index: number) => newChilds.value[index].age = +age
-
+const updateChild = (child: PersonalData, index: number) => {
+  newChilds.value[index].age = child.age
+  newChilds.value[index].name = child.name
+}
 
 // Push all data to the storage
 const submitData = () => {
@@ -101,12 +101,10 @@ const submitData = () => {
               </span> Добавить ребёнка
             </button>
           </div>
-
           <section v-if="showForm">
             <Base-Child-Form
               @removeChild="removeChild"
-              @updateChildName="updateChildName"
-              @updateChildAge="updateChildAge"
+              @updateChild="updateChild"
               :index="index"
               v-for="(child, index) in newChilds"
               :key="child"
