@@ -5,7 +5,7 @@ const props = defineProps({
   index: Number,
 })
 
-const emits = defineEmits(['updateChildName', 'updateChildAge', 'removeChild', 'updateChild'])
+const emits = defineEmits(['removeChild', 'updateChild'])
 
 const child = reactive({
   name: '',
