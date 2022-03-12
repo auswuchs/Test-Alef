@@ -12,13 +12,13 @@ const child = reactive({
   age: null
 })
 
-
 const removeChild = () => {
   emits('removeChild', props.index)
 }
 
 watch(
   () => child.name,
+
   (newValue) => {
     emits('updateChildName', newValue, props.index)
   },
@@ -33,7 +33,6 @@ watch(
 )
 
 </script>
-
 
 <template>
   <div class="wrapper">

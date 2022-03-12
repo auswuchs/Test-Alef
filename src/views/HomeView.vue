@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BaseChildForm from '@/components/BaseChildForm.vue';
 import { useFormStore } from '@/stores/useForm';
+import type { PersonalData } from '@/components/interfaces'
 
 import { reactive, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
@@ -14,17 +15,13 @@ const showForm = computed(() => {
   return newChilds.value.length <= 0 ? false : true
 })
 
-interface FormData {
-  name: string,
-  age: number | null
-}
 
-const newParent = reactive<FormData>({
+const newParent = reactive<PersonalData>({
   name: '',
   age: null
 })
 
-const newChilds = ref<FormData[]>([])
+const newChilds = ref<PersonalData[]>([])
 
 const addChildForm = () => {
   if (newChilds.value.length < 5) {
@@ -32,24 +29,18 @@ const addChildForm = () => {
     newChilds.value.push({
       name: '',
       age: null
-    } as FormData)
+    } as PersonalData)
   }
 }
 
-const removeChild = (index: number) => {
-  newChilds.value.splice(index, 1)
-}
+const removeChild = (index: number) => newChilds.value.splice(index, 1)
 
-const updateChildName = (name: string, index: number) => {
-  const child = newChilds.value[index]
-  child.name = name
-}
+const updateChildName = (name: string, index: number) => newChilds.value[index].name = name
 
-const updateChildAge = (age: string, index: number) => {
-  const child = newChilds.value[index]
-  child.age = +age
-}
+const updateChildAge = (age: string, index: number) => newChilds.value[index].age = +age
 
+
+// Push all data to the storage
 const submitData = () => {
   parent.name = newParent.name
   parent.age = newParent.age

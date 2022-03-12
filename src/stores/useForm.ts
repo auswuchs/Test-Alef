@@ -1,16 +1,15 @@
 import { defineStore } from 'pinia'
+import type { PersonalData } from '@/components/interfaces'
 
-interface FormData {
-  name: string,
-  age: number | null
-}
+
+
 
 export const useFormStore = defineStore({
   id: 'form',
   state: () => ({
-    parent: {} as FormData, 
+    parent: {} as PersonalData, 
 
-    childs: [] as FormData[]
+    childs: [] as PersonalData[]
   }),
   getters: {
   },
